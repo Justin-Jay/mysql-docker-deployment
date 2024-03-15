@@ -8,7 +8,7 @@ source ./mysql_backup_config.sh
 echo "Creating Archiver Log Dir on host"
 sudo mkdir -p $log_dir
 
-sudo chown justin:justin $log_dir
+sudo chown $user:$user $log_dir
 
 echo "Creating Back Up Folder on host"
 mkdir -p $mysql_backup_folder
