@@ -1,0 +1,32 @@
+# Use root/example as user/password credentials
+version: '3.8'
+
+services:
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata-volume:/var/lib/postgresql/data/pgdata
+    env_file:
+      - postgres.env
+
+  pgadmin4:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin4
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - pgadmin-volume:/var/lib/pgadmin
+    env_file:
+      - pgadmin.env
+
+volumes:
+  pgdata-volume:
+    driver: local
+  pgadmin-volume:
+    driver: local

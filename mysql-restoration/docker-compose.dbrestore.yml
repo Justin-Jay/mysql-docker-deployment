@@ -1,0 +1,24 @@
+version: '3.8'
+
+
+services:
+  rzdatabase-restored:
+    image: mysql:8.3.0
+    container_name: rzdatabase-restored
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - mysqldb-volume:/var/lib/mysql
+      - ./conf/my.cnf:/etc/mysql/my.cnf
+      - ./conf/all-databases.sql:/docker-entrypoint-initdb.d
+    env_file:
+      - ./conf/mysql-vars.env
+
+volumes:
+  mysqldb-volume:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /var/lib/mysql

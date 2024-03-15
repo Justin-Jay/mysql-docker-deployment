@@ -1,0 +1,23 @@
+version: '3.8'
+
+
+services:
+  archiver:
+    image: justinmaboshego/dataarchiver:latest
+    container_name: archiver
+    restart: "no"
+    volumes:
+      - ./key/:/Gcloud/Key/:ro
+      - ./data/backups/:/data/backups/:ro
+      - archiver-logs-volume:/DataArchiver/Logs/
+    env_file:
+      - ./data-archiver/mysql-archiver-vars.env
+
+
+volumes:
+  archiver-logs-volume:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /DataArchiver/Logs/
