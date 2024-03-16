@@ -23,6 +23,7 @@ echo "Old instance clean up"
 
 #BACK UP DATABASES
 echo "Backing up databases"
+source ./mysql_user_details.sh
 
 docker exec $container_name sh -c 'exec mysqldump --all-databases -u"$MYSQL_USER" -p"$MYSQL_PASSWORD"' > "$mysql_backup_folder/$database_file_name"
 
