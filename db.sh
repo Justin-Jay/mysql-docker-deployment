@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./mysql_var_config.sh/
+source ./mysql_var_config.sh
 
 echo "Creating volume mount  $volume_mount "
 
