@@ -8,6 +8,8 @@ sudo mkdir $volume_mount
 
 sudo chown $user:$user $volume_mount
 
+sudo chown $user:$user $deployment_conf
+
 cd $compose_dir
 
 echo "Bringing up database..."
