@@ -12,7 +12,7 @@ cp $mysql_conf_source/$mysql_cnf_file_name* $mysql_conf_target
 
 echo "Creating volume mount  $volume_mount "
 
-sudo mkdir $volume_mount
+sudo mkdir -p $volume_mount
 
 chown $user:$user $volume_mount
 

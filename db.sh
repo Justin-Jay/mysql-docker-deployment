@@ -4,10 +4,10 @@ source ./mysql_var_config.sh
 
 echo "Creating volume mount  $volume_mount "
 
-sudo mkdir $volume_mount
-
+sudo mkdir -p $volume_mount
 sudo chown $user:$user $volume_mount
 
+sudo mkdir -p $deployment_conf
 sudo chown $user:$user $deployment_conf
 
 cd $compose_dir
