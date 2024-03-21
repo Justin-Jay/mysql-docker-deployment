@@ -9,8 +9,9 @@ services:
       - 3306:3306
     volumes:
       - mysqldb-volume:/var/lib/mysql
-      - ./conf/my.cnf:/etc/mysql/my.cnf:ro
-      - ./conf/init.sql:/docker-entrypoint-initdb.d/init-01.sql:ro
+      #- ./conf/my.cnf:/etc/mysql/my.cnf:ro
+      - ./conf/init.sql:/docker-entrypoint-initdb.d/init-01.sql
+      - ./conf/data.sql:/docker-entrypoint-initdb.d/init-02.sql
     env_file:
       - ./conf/mysql-vars.env
 
