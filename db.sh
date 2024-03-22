@@ -24,7 +24,7 @@ cp $secrets_source/$data_init_file_name* $deployment_conf
 
 
 
-sudo chmod +x $deployment_conf/$mysql_var_file_name
+#sudo chmod +x $deployment_conf/$mysql_var_file_name
 sudo chmod +x $deployment_conf/$schema_init_file_name
 sudo chmod +x $deployment_conf/$spring_batch_schema_init_file_name
 sudo chmod +x $deployment_conf/$data_init_file_name

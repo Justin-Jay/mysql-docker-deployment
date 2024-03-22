@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export secrets_source=/home/justin/secrets/database-deployment/mysql/
-export deployment_conf=/home/justin/mysql-docker-deployment/mysql/conf/
-export compose_dir=/home/justin/mysql-docker-deployment/mysql/
+export secrets_source=/home/justin/secrets/database-deployment/mysql
+export deployment_conf=/home/justin/mysql-docker-deployment/mysql/conf
+export compose_dir=/home/justin/mysql-docker-deployment/mysql
 
 
 export schema_init_file_name=init.sql
