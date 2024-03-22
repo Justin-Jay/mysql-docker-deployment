@@ -18,6 +18,7 @@ echo "Creating secrets and vars to target"
 
 cp $secrets_source/$mysql_var_file_name* $deployment_conf
 cp $secrets_source/$schema_init_file_name* $deployment_conf
+cp $secrets_source/$spring_batch_schema_init_file_name $deployment_conf
 cp $secrets_source/$data_init_file_name* $deployment_conf
 #cp $secrets_source/$mysql_cnf_file_name* $deployment_conf
 
@@ -25,10 +26,12 @@ cp $secrets_source/$data_init_file_name* $deployment_conf
 
 sudo chmod +x $deployment_conf/$mysql_var_file_name
 sudo chmod +x $deployment_conf/$schema_init_file_name
+sudo chmod +x $deployment_conf/$spring_batch_schema_init_file_name
 sudo chmod +x $deployment_conf/$data_init_file_name
 
 sudo chown 1000:1000 $deployment_conf/$mysql_var_file_name
 sudo chown 1000:1000 $deployment_conf/$schema_init_file_name
+sudo chown 1000:1000 $deployment_conf/$spring_batch_schema_init_file_name
 sudo chown 1000:1000 $deployment_conf/$data_init_file_name
 
 
